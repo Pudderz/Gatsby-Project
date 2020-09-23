@@ -1,0 +1,32 @@
+body{
+    color: white;
+    background-color: rgb(17,17,17);
+}
+
+ul{
+    padding-left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    display: border-box;
+}
+
+.container{
+    display: border-box;
+    margin: 0;
+    max-width: 40%; 
+    background: #242426;
+    color: #aaa;
+    padding: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+    width: 100%;
+}
+@media (max-width:700px){
+    .container {
+        max-width: 100%;
+    }
+}
+.container h2{
+    color: white;
+}
+

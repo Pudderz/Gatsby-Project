@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import {Link} from 'gatsby'
+import Navigation from '../Components/navigation'
 
 class about extends Component {
     render() {
         return (
             <div>
-                <Link to="./index.js">Home</Link>                
+                <Navigation/>
+                <h2>About Site</h2>              
             </div>
         )
     }
