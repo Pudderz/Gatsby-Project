@@ -99,6 +99,7 @@ nav .buttons{
     width: 100%;
     justify-content: space-between;
     margin: auto;
+
 }
 .featured{
     min-height: 70vh;
@@ -153,7 +154,7 @@ nav .buttons{
 
 }
 .featuredText h2{
-    font-size: 6vw;
+    font-size: 475%;
     margin: auto;
 }
 .featuredText p {
@@ -164,7 +165,7 @@ nav .buttons{
     display: none;
 }
 @media(max-width:750px){
-    .buttons{
+    nav .buttons{
         display: none;
     }
     .menu{
@@ -181,9 +182,8 @@ nav .buttons{
         max-height: 50vh;
         margin: 0;
     }
-    .featuredText{
+    .featuredText, .popularPosts h3{
         position: static;
-        text-align: center;
         text-align: center;
     }
     .featuredText h2{
@@ -280,7 +280,6 @@ img{
 
 .blogPost{
     box-sizing: border-box;
-    margin: 0;
     max-width: 48%; 
     background-color: hsl(256, 26%, 20%);
     /* background: #242426; */
@@ -288,13 +287,13 @@ img{
     /* padding: 20px; */
     margin-bottom: 20px;
     list-style: none;
-    margin: 10px;
+    margin: 1%;
 }
 .blogPost h2{
     color: white;
 }
 
-@media (max-width:1200px){
+@media (max-width:800px){
     .blogPost {
         max-width: 100%;
     }
@@ -303,19 +302,17 @@ img{
 
 #popular{
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     list-style-type: none;
     padding-left:0px;
     overflow: hidden;
     padding: 0;
     gap: 0;
-    width: 100%;
+    max-width: 100%;
 }
 
 #popular li{
     height: 20vh;
-    display: flex; 
-    flex-wrap: wrap;
 }
 #popular li img{
     max-height: 100%;
@@ -331,7 +328,7 @@ img{
 
 @media (max-height: 480px) {
 #popular li {
-    height: 10vh;
+    height: 40vh;
     width: 100%;
 }
 
@@ -360,4 +357,39 @@ img{
 .colorPurple{
     background-color: hsl(256, 26%, 20%);
     color: hsl(0, 0%, 98%);
+}
+
+.popularPosts h3{
+    margin: auto; 
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+}
+
+@media (max-width: 750px){
+    .popularPosts h3{
+        text-align: center;
+        display: block;
+    }
+}
+
+.allPosts{
+    max-width: 1200px;
+}
+
+.sideMenu{
+    height: 100%;
+    float: left;
+    overflow: auto;
+    width: 200px;
+    top: 0%;
+    left:0%;
+    background-color: hsl(256, 26%, 20%);
+    position: sticky;
+
+}
+.catergorySearch li{
+    width: 100%;
+    margin: 10px;
 }

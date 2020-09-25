@@ -1,3 +1,4 @@
+import { Link } from 'gatsby'
 import React, { Component } from 'react'
 
 class Footer extends Component {
@@ -9,10 +10,10 @@ class Footer extends Component {
                     <div className="flex">
                     <div className="grid">
                     <h5>Our company</h5>
-                    <a href="">About us</a>
-                    <a href="">Jobs</a>
-                    <a href="">View plans</a>
-                    <a href="">Reviews</a>  
+                    <Link >About us</Link>
+                    <Link>Jobs</Link>
+                    <Link>View plans</Link>
+                    <Link>Reviews</Link>  
                     </div>
 
                     <div className="grid">

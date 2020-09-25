@@ -7,7 +7,7 @@ class Featured extends Component {
             <div className="container">
                 
                 <div className="featuredImage">
-                    <img src={require('../images/codeDisplay.jpg')}  alt="" />
+                    <img src='/images/codeDisplay.jpg'  alt="" />
                 </div>
                 <div className="featuredText">
                 {/* <hr className="dividerShow"/> */}
