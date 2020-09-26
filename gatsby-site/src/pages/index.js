@@ -6,6 +6,8 @@ import Blog from '../Components/blog.js'
 import '../Components/blogBox.css'
 import Footer from "../Components/footer"
 import PopularPosts from "../Components/popularPosts"
+
+
 export default function Home() {
   return (
     <div>

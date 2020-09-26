@@ -9,7 +9,7 @@ export const query = graphql`
       description
       postedAt
       image {
-        childImageSharp {
+         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
