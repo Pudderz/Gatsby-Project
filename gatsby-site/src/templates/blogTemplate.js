@@ -1,46 +1,57 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
-export const query = graphql(`query ($slug: String!) {
-        dataJson(slug: {eq: $slug}) {
-            title
-            postedAt
-            description
-            image {
-                childImageSharp {
-                    fluid {
-                        ...GatsbyImagesSharpFluid
-                    }
-                }
-            }
-        }
-    }
-`);
+import React from 'react';
+import PropTypes from "prop-types"
+import {graphql}  from 'gatsby'
+import Footer from '../Components/footer'
+import Blog from '../Components/blog'
+import Pager from "../Components/pager"
+import Navigation from '../Components/navigation';
 
-const Product = ({data}) => {
-    const product = data.dataJson;
-
+const BlogPost = ({data, pageContext})=>{
+    const articles = data.allBlogInfoJson.edges;
     return(
-        <section>
-            <Image 
-                fluid={product.image.childImageSharp.fluid}
-                alt={product.title}
-            />
-             <h1>{product.title}</h1>
-            <div dangerouslySetInnerHTML={{__html: product.description}}/>
-        </section>
+        <div>
+            <Navigation/>
+            <h3 style={{'margin': 'auto','text-align': 'center',}}>Recent Posts</h3>
+            <div>
+                <ul className="allPosts">
+                    {articles.map(article=>(
+                        <Blog data={article}/>
+                    ))}
+                </ul>
+            </div>
+            <Pager pageContext={pageContext}/>
+            <Footer/>
+
+        </div>
+        
     )
 }
-export default Product
 
-// function BlogTemplate({pageContext}) {
-//     return (
-//         <section>
-//             <img src={pageContext.image} alt={pageContext.title}/>
-//             <h1>{pageContext.title}</h1>
-//             <div dangerouslySetInnerHTML={{__html: pageContext.info}}/>
-//         </section>
-//     )
-// }
+BlogPost.propTypes ={
+    data: PropTypes.object.isRequired,
+    pageContext: PropTypes.object.isRequired
+}
 
-// export default BlogTemplate
+export const query = graphql`
+  query($limit: Int!, $skip: Int!){
+    allBlogInfoJson(limit: $limit, skip: $skip) {
+      edges {
+        node {
+          description
+          slug
+          title
+          postedAt
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export default BlogPost

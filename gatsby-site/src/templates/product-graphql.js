@@ -17,7 +17,7 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
 const Product = ({ data }) => {
   const product = data.blogInfoJson

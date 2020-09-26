@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
 import Tag from './tag'
 import './blogBox.css'
+import Image from 'gatsby-image'
+import {Link} from 'gatsby'
 
-
-function Blog({children}) {
+function Blog({data}) {
     return (
-        <li className="blogPost">
+        <li key={data.node.slug} className="blogPost">
             <div >
-                {children}
+                <Image
+                fluid={data.node.image.childImageSharp.fluid}
+                alt={data.node.title}
+                className="image"
+                />
             </div>
             <div className="information">
-                <h2>Blog Title</h2>
-                <time>Posted At:</time>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo. </p>
+                <h2>{data.node.title}</h2>
+                <time>Posted At: {data.postedAt}</time>
+                <p>{data.node.description}</p>
             </div>
             <div className="tagList">
                 <Tag/>
             </div>
-            <button className="purple">Read More</button>   
+            <Link to={`/blogs/${data.node.slug}`} className="purple">Read More</Link>   
         </li>
     )
 }
