@@ -1,51 +1,28 @@
 import React, { Component } from 'react'
 import Tag from './tag'
-import {staticQuery, graphql, StaticQuery} from 'gatsby'
+import {staticQuery, graphql, StaticQuery, Link} from 'gatsby'
 import Image from "gatsby-image"
 
-const Featured =({ children })=>(
-    <StaticQuery
-        query={graphql`
-            query FeautedItemQuery {
-            blogInfoJson {
-                title
-                description
-                postedAt
-                image {
-                    childImageSharp {
-                    fluid {
-                        ...GatsbyImageSharpFluid
-                    }
-                    }
-                }
-            }
-            }
-        `}
-        render= {data=>(
-            <div className="container">
-                
+const Featured =({ data })=>(
+    <div className="container">
         <div className="featuredImage">
-            <Image
-            fluid={data.blogInfoJson.image.childImageSharp.fluid}
-            alt={data.blogInfoJson.title}
+             <Image
+            fluid={data.node.image.childImageSharp.fluid}
+            alt={data.node.title}
             className="image"
             />
         </div>
         <div className="featuredText">
-        {/* <hr className="dividerShow"/> */}
-    <h2>{data.blogInfoJson.title}</h2>
+            
+            <h2>{data.node.title}</h2>
 
-    <time>Posted At: {data.postedAt}</time>
-    <p>{data.blogInfoJson.description}</p>  
-        <button className="purple">Read More</button>    
-        <Tag/>
+            <time>Posted At: {data.node.postedAt}</time>
+            <div dangerouslySetInnerHTML={{__html : data.node.description}}/>
+            <Link to={`/blogs/${data.node.slug}`}className="purple">Read More</Link>    
+            <Tag/>
         </div>
     </div>
-        )}
-
-        
-    />
+    //     )} 
 )
 
 export default Featured
-

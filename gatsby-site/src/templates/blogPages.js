@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
+import Navigation from "../Components/navigation";
 
 export const query = graphql`
   query($slug: String!) {
@@ -23,7 +24,9 @@ const Product = ({ data }) => {
   const product = data.blogInfoJson
 
   return (
-    <div>
+    <>
+    <Navigation/>
+    <section>
       <h1>{product.title}</h1>
       <Image
         fluid={product.image.childImageSharp.fluid}
@@ -32,7 +35,8 @@ const Product = ({ data }) => {
       />
       <p>{product.postedAT}</p>
       <div dangerouslySetInnerHTML={{ __html: product.description }} />
-    </div>
+    </section>
+    </>
   )
 }
 
