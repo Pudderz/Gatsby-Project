@@ -217,6 +217,9 @@ nav .buttons{
         margin: auto;
     }
 }
+.popularPosts{
+    margin-top: 6vh;
+}
 
 @media(max-width:1250px){
     .featuredImage .image{
@@ -228,7 +231,9 @@ nav .buttons{
         margin: auto;
         width: fit-content;
     }
-
+    .popularPosts{
+        margin-top: 0;
+    }
     
 }
 
@@ -388,9 +393,8 @@ img{
 }
 
 .popularPosts h3{
-    margin: auto; 
-    max-width: 600px;
     margin: auto;
+    max-width: 600px;
     padding: 20px;
     display: flex;
 }
@@ -497,4 +501,57 @@ img{
     margin: auto;
     display: flex;
     justify-content: center;
+}
+
+#postTitle{
+    margin: auto;
+    max-width: 600px;
+    padding: 20px;
+    display: flex;
+}
+.center{
+    margin: auto;
+    width: fit-content;
+}
+.center a{
+    color: rgba(255, 255, 255, 0.664);
+    padding: 10px;
+}
+.center a:hover{
+    text-decoration: underline;
+}
+
+.contactForm{
+    margin: auto;
+    width:80%;
+    display: grid;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    color: black;
+    font-weight: 700;
+
+}
+.contactForm h3{
+    margin: auto;
+}
+
+.contactForm label{
+    padding: 20px;
+}
+label input{
+    width:100%
+}
+#message{
+    height: 200px
+}
+#formDiv{
+    max-width: 800px;
+    margin: auto;
+}
+
+#aboutSite{
+    background-color: hsl(256, 26%, 20%);
+    padding: 20px;
+    margin-bottom: 20px;
 }

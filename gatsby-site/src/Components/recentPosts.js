@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Image from 'gatsby-image'
+import { Link } from 'gatsby';
 export const PopularPosts =(props)=> {
     const onChange=(e)=>{
         props.onPostClick(e.currentTarget.getAttribute('data-key')); 
@@ -27,6 +28,7 @@ export const PopularPosts =(props)=> {
                 ))}
             </ul>
             <hr/>
+            <div class="center"><Link to="/posts">All Posts</Link></div>
         </div>
     )
     

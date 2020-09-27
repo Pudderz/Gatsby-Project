@@ -6,11 +6,13 @@ import Image from "gatsby-image"
 const Featured =({ data })=>(
     <div className="container">
         <div className="featuredImage">
-             <Image
-            fluid={data.node.image.childImageSharp.fluid}
-            alt={data.node.title}
-            className="image"
-            />
+            <Link to={`/blogs/${data.node.slug}`}>
+                <Image
+                fluid={data.node.image.childImageSharp.fluid}
+                alt={data.node.title}
+                className="image"
+                />    
+            </Link>
         </div>
         <div className="featuredText">
             
