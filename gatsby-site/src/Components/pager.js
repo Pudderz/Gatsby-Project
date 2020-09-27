@@ -5,14 +5,14 @@ import React from 'react'
 const Pager = ({pageContext}) =>{
     const {previousPagePath, nextPagePath}= pageContext;
     return(
-        <>
+        <div className="pager">
         {previousPagePath && (
             <Link className="purple" to={previousPagePath}>previousPagePath</Link>
         )}
         {nextPagePath && (
             <Link className="purple" to={nextPagePath}>nextPagePath</Link>
         )}
-        </>
+        </div>
     )
 }
 

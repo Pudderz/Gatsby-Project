@@ -11,7 +11,8 @@ const BlogPost = ({data, pageContext})=>{
     return(
         <div>
             <Navigation/>
-            <h3 style={{'margin': 'auto','text-align': 'center',}}>Recent Posts</h3>
+            <h3 style={{'margin': 'auto','text-align': 'center',}}>Posts</h3>
+            <Pager pageContext={pageContext}/>
             <div>
                 <ul className="allPosts">
                     {articles.map(article=>(
