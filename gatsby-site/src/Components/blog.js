@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Tag from './tag'
 import './blogBox.css'
 import Image from 'gatsby-image'
 import {Link} from 'gatsby'
@@ -18,11 +17,9 @@ function Blog({data}) {
                 <h2>{data.node.title}</h2>
                 <time>Posted At: {data.node.postedAt}</time>
                 <div dangerouslySetInnerHTML={{__html:data.node.description}}></div>
+                <Link to={`/blogs/${data.node.slug}`} className="purple">Read More</Link>   
             </div>
-            <div className="tagList">
-                <Tag/>
-            </div>
-            <Link to={`/blogs/${data.node.slug}`} className="purple">Read More</Link>   
+            
         </li>
     )
 }

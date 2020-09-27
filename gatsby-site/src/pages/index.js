@@ -24,6 +24,11 @@ function Home ({data}){
     setstate({
       featured: e
     })
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   

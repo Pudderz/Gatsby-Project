@@ -20,6 +20,9 @@ export const PopularPosts =(props)=> {
                         style={{'object-fit':'cover', width: '100%', height:'100%',}}
                         data-key={`${index}`}
                         />
+                        <div class="middle">
+                            <div class="text">{item.node.postedAt}</div>
+                        </div>
                     </li>
                 ))}
             </ul>

@@ -21,6 +21,13 @@
         "image": "./images/image-intro-desktop.jpg"
     },
     {
+        "title" : "Forest",
+        "slug": "forest",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.</p>",
+        "postedAt" : "20/09/20",
+        "image": "./images/trees.jpg"
+    },
+    {
         "title" : "Code Display",
         "slug": "codeDisplay2",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.</p>",
@@ -33,13 +40,7 @@
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.</p>",
         "postedAt" : "20/09/20",
         "image": "./images/bookshelf.jpg"
-    },
-    {
-        "title" : "Forest",
-        "slug": "forest",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.</p>",
-        "postedAt" : "20/09/20",
-        "image": "./images/trees.jpg"
     }
+    
 
 ]

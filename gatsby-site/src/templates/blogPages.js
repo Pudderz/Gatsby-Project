@@ -28,14 +28,21 @@ const Product = ({ data }) => {
     <>
     <Navigation/>
     <section>
-      <h1>{product.title}</h1>
+      
+      <div className="blogPiece">
       <Image
         fluid={product.image.childImageSharp.fluid}
         alt={product.title}
-        style={{ float: "left", marginRight: "1rem", width: 150 }}
+        style={{ position: 'relative', margin:'auto'}}
+        className="image"
       />
-      <p>{product.postedAT}</p>
-      <div dangerouslySetInnerHTML={{ __html: product.description }} />
+      <h1>{product.title}</h1>
+      <p>{product.postedAt}</p>
+      <div className="blogContent">
+        <div  dangerouslySetInnerHTML={{ __html: product.description }} />  
+      </div>
+      
+      </div>
     </section>
     <Footer/>
     </>

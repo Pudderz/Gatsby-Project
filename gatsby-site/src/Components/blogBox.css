@@ -72,19 +72,8 @@ h2,h3,h4{
 h1,h2,h3{
     font-size: 3em;
 }
-/* nav{
-    position: fixed;
-    top: 0%;
-    z-index: 1;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    background-color: #242426;
-    box-shadow: 0px 1px 1px 2px rgba(17,17,17, 0.12);
 
-} */
 nav{
-    backdrop-filter: blur(2em);
     display: flex;
     position: sticky;
     top: 0%;
@@ -93,6 +82,7 @@ nav{
     justify-content: space-around;
     height: 1em;
     padding: 1em;
+    transition: 0.3s;
 }
 nav .buttons{
     display: flex;
@@ -174,13 +164,29 @@ nav .buttons{
 }
 .menu{
     display: none;
+    height: fit-content;
+    background: none;
+    outline: none;
+    border-style: none;
 }
+
+.menu div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(31, 30, 30);
+    margin: 4px 0;
+    
+}
+
 @media(max-width:750px){
     nav .buttons{
         display: none;
     }
     .menu{
         display: block;
+    }
+    nav{
+        justify-content: space-between;
     }
     .featuredImage{
         width: 100%;
@@ -303,6 +309,9 @@ img{
 }
 .blogPost h2{
     color: white;
+    margin: 0;
+    margin-bottom: 15px;
+    font-size: xx-large;
 }
 
 @media (max-width:800px){
@@ -327,6 +336,7 @@ img{
 #popular li{
     height: 20vh;
     min-width: 25vw;
+    position: relative;
 }
 #popular li img{
     max-height: 100%;
@@ -334,11 +344,9 @@ img{
     object-fit: cover;
     cursor: pointer;
     flex-grow: 2;
+    z-index: 1;
 }
-#popular img:hover{
-    opacity: 0.7;
-    transition: 0.3s;
-}
+
 
 @media (max-height: 480px) {
 #popular li {
@@ -360,12 +368,10 @@ img{
       width: 100%;
       object-fit: cover;
 }
- .blogPost .purple{
-     margin: 20px;
- }
 
 .information{
     padding:20px;
+    padding-top: 0px;
 
 }
 .colorPurple{
@@ -389,7 +395,7 @@ img{
 }
 
 .allPosts{
-    max-width: 1200px;
+    max-width: 1000px;
 }
 
 .sideMenu{
@@ -407,3 +413,72 @@ img{
     width: 100%;
     margin: 10px;
 }
+
+#overlay{
+    position: fixed;
+    width: 0%;
+    height: 100%;
+    top: 0%;
+    right: 0%;
+    background-color: hsl(256, 26%, 20%);
+    z-index: 3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#overlay a{
+    margin: 0 auto;
+    font-size: 2em;
+}
+#overlay a:hover{
+    color: #f1f1f1;
+}
+
+#closeMenu{
+    position: absolute;
+    top:0%;
+    right: 0%;
+    cursor: pointer;
+    padding: 20px;
+    font-size: 3em;
+    line-height: 0%;
+}
+#closeMenu:hover{
+    background-color: rgb(31, 30, 30);
+}
+.blogPiece{
+    background-color: hsl(256, 26%, 20%);
+    max-width: 800px;
+    margin: auto;    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 2vw;
+}
+
+.blogContent{
+    background-color: rgb(19,17,39);
+    padding: 20px;
+}
+
+.middle {
+    transition: .5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .popularPosts li .image:hover {
+    opacity: 0.3;
+    
+  }
+  
+  
+  .text {
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
