@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import {Link} from 'gatsby'
 import Navigation from "../Components/navigation"
 import Featured from "../Components/featured"
@@ -10,6 +10,9 @@ import PropTypes from "prop-types"
 
 
 function Home ({data}){
+  const [state, setstate] = useState({
+    featured:0,
+  })
   // constructor(props, data){
   //   super(props)
   //   this.state={
@@ -17,11 +20,11 @@ function Home ({data}){
   //     recentPost: data.allBlogInfoJson.edges
   //   }
   // }
-  // postClick =(e)=>{
-  //   this.setState({
-  //     featured: data.allBlogInfoJson.edges[0]
-  //   })
-  // }
+  const onPostClick =(e)=>{
+    setstate({
+      featured: e
+    })
+  }
 
   
     return (
@@ -29,9 +32,9 @@ function Home ({data}){
         <main>
           <Navigation/>
           <div className="featured">
-            <Featured data={data.allBlogInfoJson.edges[0]}></Featured>
+            <Featured data={data.allBlogInfoJson.edges[state.featured]}></Featured>
           </div>
-          <PopularPosts data={data} />
+          <PopularPosts data={data} onPostClick={onPostClick}/>
 
         </main>
       </div>

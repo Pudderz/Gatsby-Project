@@ -16,8 +16,8 @@ function Blog({data}) {
             </div>
             <div className="information">
                 <h2>{data.node.title}</h2>
-                <time>Posted At: {data.postedAt}</time>
-                <p>{data.node.description}</p>
+                <time>Posted At: {data.node.postedAt}</time>
+                <div dangerouslySetInnerHTML={{__html:data.node.description}}></div>
             </div>
             <div className="tagList">
                 <Tag/>

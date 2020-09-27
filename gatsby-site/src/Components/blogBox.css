@@ -54,6 +54,7 @@ ul{
     width: 100%;
     position: relative;
     padding: 0px;
+    min-height: 30em;
 }
 
 
@@ -120,16 +121,18 @@ nav .buttons{
     object-fit: cover;
 
 }
-.featuredImage div{
+.image{
     position: relative;
 
 }
-.featuredImage div div{
+.image div{
     position: absolute;
 }
-div.featuredImage > div > picture > img{
+.image > picture > img{
     position: relative !important;
 }
+
+
 .featuredText{
     margin: auto;
     padding: 20px;
@@ -250,6 +253,7 @@ a{
     cursor: pointer;
     padding: 7px 20px;
     height: fit-content;
+    display: inline-block;
 }
 
 .purple:hover{
@@ -310,17 +314,19 @@ img{
 
 #popular{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     list-style-type: none;
     padding-left:0px;
     overflow: hidden;
     padding: 0;
     gap: 0;
     max-width: 100%;
+    
 }
 
 #popular li{
     height: 20vh;
+    min-width: 25vw;
 }
 #popular li img{
     max-height: 100%;
