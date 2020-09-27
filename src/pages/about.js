@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import {Link} from 'gatsby'
 import Navigation from '../Components/navigation'
 import Footer from '../Components/footer'
 

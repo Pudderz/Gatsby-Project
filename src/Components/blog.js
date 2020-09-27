@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './blogBox.css'
 import Image from 'gatsby-image'
 import {Link} from 'gatsby'

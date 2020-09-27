@@ -4,6 +4,7 @@ import Featured from "../Components/featured"
 import '../Components/blogBox.css'
 import RecentPosts from "../Components/recentPosts"
 import PropTypes from "prop-types"
+import { graphql } from 'gatsby'
 
 
 function Home ({data}){

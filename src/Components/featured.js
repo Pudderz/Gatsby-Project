@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import Tag from './tag'
-import {staticQuery, graphql, StaticQuery, Link} from 'gatsby'
+import React from 'react'
+import {Link} from 'gatsby'
 import Image from "gatsby-image"
 
 const Featured =({ data })=>(
@@ -21,10 +20,8 @@ const Featured =({ data })=>(
             <time>Posted At: {data.node.postedAt}</time>
             <div dangerouslySetInnerHTML={{__html : data.node.description}}/>
             <Link to={`/blogs/${data.node.slug}`}className="purple">Read More</Link>    
-            <Tag/>
         </div>
     </div>
-    //     )} 
 )
 
 export default Featured

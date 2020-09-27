@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Image from 'gatsby-image'
 import { Link } from 'gatsby';
 export const PopularPosts =(props)=> {
@@ -6,14 +6,13 @@ export const PopularPosts =(props)=> {
         props.onPostClick(e.currentTarget.getAttribute('data-key')); 
     }
     
-    console.log(props.data)
     return (
         <div className="popularPosts">
             <h3>Recent Posts</h3>
             <hr/>
             <ul id="popular">
                 {props.data.allBlogInfoJson.edges.map((item, index)=>(
-                    <li key={`${index}`} onClick={onChange} data-key={`${index}`}>
+                    <li key={`${index}`} onClick={onChange} onKeyDown={onChange} data-key={`${index}`}>
                         <Image
                         fluid={item.node.image.childImageSharp.fluid}
                         alt={item.node.title}

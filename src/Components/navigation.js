@@ -33,27 +33,27 @@ export default function Navigation() {
         <nav style={{top: navState.top}}>
             
             <div className="buttons">
-                <Link to="/about">About</Link>
                 <Link to="/">Home</Link>
                 <Link to='/posts'>Posts</Link> 
+                <Link to="/about">About</Link>
                 <Link to='/'>Portfolio</Link>
                 <Link to='/'>Github</Link>  
             </div>
             <p className="menu" style={{"color":"rgb(19,17,39)",'margin': '0',
     'font-size': 'large'}}>Blog</p>
-            <button className="menu" onClick={displayMenu} title="menu">
+            <button className="menu" onClick={displayMenu} onKeyDown={displayMenu} title="menu">
                 <div></div>
                 <div></div>
                 <div></div>
             </button>
         </nav>
         <div id="overlay" style={{display: menuState.display, width:menuState.width}}>
-            <div id="closeMenu" onClick={displayMenu}>&times;</div>
-        <Link to="/about">About</Link>
+            <button id="closeMenu" onClick={displayMenu} onKeyDown={displayMenu} >&times;</button>
                 <Link to="/">Home</Link>
                 <Link to='/posts'>Posts</Link> 
+                <Link to="/about">About</Link>
                 <Link to='/'>Portfolio</Link>
-                <Link to='/'>Github</Link>  
+                <Link to='/'>Github</Link>   
         </div>
         </>
     )

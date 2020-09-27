@@ -18,24 +18,24 @@ class Footer extends Component {
 
                     <div className="grid">
                     <h5>Help me</h5>
-                    <a href="">FAQ</a>
-                    <a href="">Terms of use</a>
-                    <a href="">Privacy policy</a>
-                    <a href="">Cookies</a>  
+                    <Link to="">FAQ</Link>
+                    <Link to="">Terms of use</Link>
+                    <Link to="">Privacy policy</Link>
+                    <Link to="">Cookies</Link>  
                     </div>
 
                     <div className="grid">
                     <h5>Contact</h5>
-                    <a href="">Email</a>
-                    <a href="">Support</a>
-                    <a href="">Live chat</a>
+                    <Link to="">Email</Link>
+                    <Link to="">Support</Link>
+                    <Link to="">Live chat</Link>
                     </div>
 
                     <div className="grid">
                     <h5>Others</h5>
-                    <a href="">Careers</a>
-                    <a href="">Information</a>
-                    <a href="">Licenses</a>  
+                    <Link to="">Careers</Link>
+                    <Link to="">Information</Link>
+                    <Link to="">Licenses</Link>  
                     </div>
                     </div>
 

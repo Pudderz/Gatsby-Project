@@ -168,6 +168,7 @@ nav .buttons{
     background: none;
     outline: none;
     border-style: none;
+    
 }
 
 .menu div{
@@ -450,9 +451,15 @@ img{
     top:0%;
     right: 0%;
     cursor: pointer;
-    padding: 20px;
-    font-size: 3em;
+    font-size: 6vh;
     line-height: 0%;
+    background: none;
+    border-style: none;
+    outline: none;
+    color: white;
+    height: 5vh;
+    width: 5vh;
+
 }
 #closeMenu:hover{
     background-color: rgb(31, 30, 30);
@@ -501,6 +508,14 @@ img{
     margin: auto;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+}
+.pager a{
+    margin-left:10px;
+    margin-right: 10px;
+    width: 150px;
+    text-align: center;
+    
 }
 
 #postTitle{
