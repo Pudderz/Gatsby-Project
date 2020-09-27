@@ -7,11 +7,12 @@ function Blog({data}) {
     return (
         <li key={data.node.slug} className="blogPost">
             <div >
+                <Link to={`/blogs/${data.node.slug}`}>
                 <Image
                 fluid={data.node.image.childImageSharp.fluid}
                 alt={data.node.title}
                 className="image"
-                />
+                /></Link>
             </div>
             <div className="information">
                 <h2>{data.node.title}</h2>

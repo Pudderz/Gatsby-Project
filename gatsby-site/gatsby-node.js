@@ -23,7 +23,7 @@ if(results.error){
 paginate({
   createPage,
   items: results.data.allBlogInfoJson.edges,
-  itemsPerPage: 3,
+  itemsPerPage: 4,
   pathPrefix: '/posts',
   component: path.resolve('./src/templates/listOfPosts.js'),
 })
