@@ -1,19 +1,20 @@
 import React, {useState} from "react"
 import Navigation from "../Components/navigation"
 import Featured from "../Components/featured"
-import '../Components/blogBox.css'
+import '../Components/styles.scss'
 import RecentPosts from "../Components/recentPosts"
 import PropTypes from "prop-types"
 import { graphql } from 'gatsby'
+import Metadata from "../Components/metadata"
 
 
 function Home ({data}){
   const [state, setstate] = useState({
-    featured:0,
+    featuredIndex:0,
   })
   const onPostClick =(e)=>{
     setstate({
-      featured: e
+      featuredIndex: e
     })
     window.scrollTo({
       top: 0,
@@ -23,16 +24,19 @@ function Home ({data}){
   }
 
   
-    return (
-      <main>
-        <Navigation/>
-        <div className="featured">
-          <Featured data={data.allBlogInfoJson.edges[state.featured]}></Featured>
-        </div>
-        <RecentPosts data={data} onPostClick={onPostClick}/>
+  return (
+    <>
+    <Metadata/>
+      <Navigation/>
+    <main>
+      <div className="featured">
+        <Featured data={data.allBlogInfoJson.edges[state.featuredIndex]}></Featured>
+      </div>
+      <RecentPosts data={data} onPostClick={onPostClick}/>
 
-      </main>
-    )  
+    </main>
+    </>
+  )  
   
 }
 Home.propTypes ={

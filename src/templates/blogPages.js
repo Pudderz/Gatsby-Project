@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Navigation from "../Components/navigation";
 import Footer from "../Components/footer";
+import Metadata from "../Components/metadata";
 
 export const query = graphql`
   query($slug: String!) {
@@ -27,6 +28,7 @@ const Product = ({ data }) => {
   return (
     <>
     <Navigation/>
+    <Metadata/>
     <section>
       
       <div className="blogPiece">

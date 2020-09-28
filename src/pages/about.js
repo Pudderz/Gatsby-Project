@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import Navigation from '../Components/navigation'
 import Footer from '../Components/footer'
+import Metadata from '../Components/metadata'
+
 
 class about extends Component {
     render() {
         return (
             <div>
                 <Navigation/>
+                <Metadata/>
                 <div id="aboutSite">
                     <h2>About Site</h2>     
                     <p>This is a Gatsby Blog Template site that takes data from a json file using graphql and displays the content in a blog format</p>

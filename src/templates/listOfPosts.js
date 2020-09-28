@@ -5,11 +5,14 @@ import Footer from '../Components/footer'
 import Blog from '../Components/blog'
 import Pager from "../Components/pager"
 import Navigation from '../Components/navigation';
+import GoToTopBot from '../Components/goToTopBot';
+import Metadata from '../Components/metadata';
 
 const BlogPost = ({data, pageContext})=>{
     const articles = data.allBlogInfoJson.edges;
     return(
         <div>
+          <Metadata/>
             <Navigation/>
             <h3 style={{'margin': 'auto','text-align': 'center',}}>Posts</h3>
             <Pager pageContext={pageContext}/>
@@ -21,6 +24,7 @@ const BlogPost = ({data, pageContext})=>{
                 </ul>
             </div>
             <Pager pageContext={pageContext}/>
+            <GoToTopBot/>
             <Footer/>
 
         </div>

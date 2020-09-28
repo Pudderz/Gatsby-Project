@@ -4,8 +4,8 @@ import React, { useEffect, useState } from 'react'
 export default function Navigation() {
     const [navState, setNavDisplay]= useState({top:'0px'});
     const [menuState, setShowMenu] = useState({display: 'none'})
-    let previousYPos = window.pageYOffset; 
     useEffect(()=>{
+        let previousYPos = window.pageYOffset; 
         window.addEventListener('scroll', ()=>{
             let currentYPos = window.pageYOffset;
             if(previousYPos> currentYPos){
