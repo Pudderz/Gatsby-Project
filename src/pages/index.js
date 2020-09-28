@@ -54,7 +54,7 @@ query{
         postedAt
         image {
           childImageSharp {
-            fluid {
+            fluid(quality: 60) {
               ...GatsbyImageSharpFluid
             }
           }

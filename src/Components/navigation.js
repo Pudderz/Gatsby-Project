@@ -39,8 +39,8 @@ export default function Navigation() {
                 <Link to='/'>Portfolio</Link>
                 <Link to='/'>Github</Link>  
             </div>
-            <p className="menu" style={{"color":"rgb(19,17,39)",'margin': '0',
-    'font-size': 'large'}}>Blog</p>
+            <Link to='/' className="menu" style={{"color":"rgb(19,17,39)",'margin': '0',
+    'font-size': 'large'}}>Blog</Link>
             <button className="menu" onClick={displayMenu} onKeyDown={displayMenu} title="menu">
                 <div></div>
                 <div></div>
@@ -58,3 +58,5 @@ export default function Navigation() {
         </>
     )
 }
+
+
