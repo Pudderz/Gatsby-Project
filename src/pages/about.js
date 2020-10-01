@@ -38,16 +38,18 @@ class about extends Component {
                 <div id="formDiv">
                     <form className="contactForm">
                          <h3>Contact Form</h3>
-                        <label for="name">
-                            Name:<input id="name"type="text" />
+                        <label htmlFor="name">
+                            Name:<input id="name"type="text" placeholder="name"/>
                         </label>
-                        <label for="email">
-                            Email:<input id="email"type="email" />
+                        <label htmlFor="email">
+                            Email:<input id="email"type="email" placeholder="email"/>
                         </label>
-                        <label for="message">
-                            Message:<input id="message" type="text" />
+                        <label htmlFor="message">
+                            Message:<textarea id="message" type="text" placeholder="message"/>
                         </label>
-                        <button type="submit">Send</button>
+                        
+                        <button className="purple" type="submit">Send</button>
+                    
                     </form>
                 </div>
                 <Footer/>       

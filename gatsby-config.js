@@ -17,7 +17,7 @@ module.exports = {
         name: "Gatsby Blog",
         short_name: "GatsbyBlog",
         start_url: "/",
-        background_color: "##131127",
+        background_color: "#131127",
         theme_color: "#2d2640",
         display: "standalone",
         icon: "static/favicon.ico",

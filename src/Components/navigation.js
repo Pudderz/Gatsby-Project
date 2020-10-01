@@ -4,21 +4,34 @@ import React, { useEffect, useState } from 'react'
 export default function Navigation() {
     const [navState, setNavDisplay]= useState({top:'0px'});
     const [menuState, setShowMenu] = useState({display: 'none'})
+
+
+    const onScroll=(previousYPos)=>{
+
+        const currentYPos = window.pageYOffset;
+        if(previousYPos> currentYPos){
+            setNavDisplay({
+                top: '0px',
+            });
+            }else{
+            setNavDisplay({
+                top: '-50px',
+            });
+        }
+        return currentYPos;
+    }
+
     useEffect(()=>{
         let previousYPos = window.pageYOffset; 
         window.addEventListener('scroll', ()=>{
-            let currentYPos = window.pageYOffset;
-            if(previousYPos> currentYPos){
-                setNavDisplay({
-                    top: '0px',
-                });
-            }else{
-                setNavDisplay({
-                    top: '-50px',
-                });
-            }
-            previousYPos = currentYPos;
+            previousYPos= onScroll(previousYPos);  
         })
+        return ()=> {
+            window.removeEventListener('scroll', ()=>{
+            previousYPos= onScroll(previousYPos);  
+        
+        })
+        }
     },[])
 
     const displayMenu = ()=>{
@@ -40,7 +53,7 @@ export default function Navigation() {
                 <Link to='/'>Github</Link>  
             </div>
             <Link to='/' className="menu" style={{"color":"rgb(19,17,39)",'margin': '0',
-    'font-size': 'large'}}>Blog</Link>
+    'fontSize': 'large'}}>Blog</Link>
             <button className="menu" onClick={displayMenu} onKeyDown={displayMenu} title="menu">
                 <div></div>
                 <div></div>

@@ -35,7 +35,7 @@ const Product = ({ data }) => {
       <Image
         fluid={product.image.childImageSharp.fluid}
         alt={product.title}
-        style={{ position: 'relative', margin:'auto', 'max-height': '60vh'}}
+        style={{ position: 'relative', margin:'auto', 'maxHeight': '60vh'}}
         className="image"
       />
       <h1>{product.title}</h1>

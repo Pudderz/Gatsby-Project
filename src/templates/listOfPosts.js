@@ -14,12 +14,12 @@ const BlogPost = ({data, pageContext})=>{
         <div>
           <Metadata/>
             <Navigation/>
-            <h3 style={{'margin': 'auto','text-align': 'center',}}>Posts</h3>
+            <h3 style={{'margin': 'auto','textAlign': 'center',}}>Posts</h3>
             <Pager pageContext={pageContext}/>
             <div>
                 <ul className="allPosts">
-                    {articles.map(article=>(
-                        <Blog data={article}/>
+                    {articles.map((article, index)=>(
+                        <Blog key={index} data={article}/>
                     ))}
                 </ul>
             </div>

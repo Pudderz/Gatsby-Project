@@ -17,17 +17,19 @@ export const PopularPosts =(props)=> {
                         fluid={item.node.image.childImageSharp.fluid}
                         alt={item.node.title}
                         className="image recentPostImage"
-                        style={{'object-fit':'cover', width: '100%', height:'100%',}}
+                        style={{'objectFit':'cover', width: '100%', height:'100%',}}
                         data-key={`${index}`}
                         />
-                        <div class="middle">
-                            <div class="text">{item.node.postedAt}</div>
+                        <div className="middle">
+                            <div className="text">
+                                <p>{item.node.postedAt}</p>
+                            </div>
                         </div>
                     </li>
                 ))}
             </ul>
             <hr/>
-            <div class="center"><Link to="/posts">All Posts</Link></div>
+            <div className="center"><Link to="/posts">All Posts</Link></div>
         </div>
     )
     
