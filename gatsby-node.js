@@ -39,4 +39,34 @@ results.data.allBlogInfoJson.edges.forEach(edge=>{
         }
     })
 })
+
+
+return graphql(`{
+  allMarkdownRemark {
+    edges {
+      node {
+        html
+        id
+        frontmatter {
+          path
+          title
+        }
+      }
+    }
+  }
+}`)
+.then(res=>{
+  if(res.errors){
+    return Promise.reject(res.error)
+  }
+  res.data.allMarkdownRemark.edges.forEach(({node})=>{
+    createPage({
+      path: node.frontmatter.path,
+      component: path.resolve('src/templates/markdownTemp.js'),
+    })  
+  })
+})
+
+
+
 }
