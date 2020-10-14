@@ -30,7 +30,7 @@ function Home ({data}){
       <Navigation/>
     <main>
       <div className="featured">
-        <Featured data={data.allBlogInfoJson.edges[state.featuredIndex]}></Featured>
+        <Featured data={data.allMarkdownRemark.edges[state.featuredIndex]}></Featured>
       </div>
       <RecentPosts data={data} onPostClick={onPostClick}/>
 
@@ -43,26 +43,49 @@ Home.propTypes ={
   data: PropTypes.object.isRequired,
 }
 
+// export const query = graphql`
+// // query{
+// //   allBlogInfoJson(limit: 4) {
+// //     edges {
+// //       node {
+// //         description
+// //         slug
+// //         title
+// //         postedAt
+// //         image {
+// //           childImageSharp {
+// //             fluid(quality: 60) {
+// //               ...GatsbyImageSharpFluid
+// //             }
+// //           }
+// //         }
+// //       }
+// //     }
+// //   }
+// // }
+// // `;
 export const query = graphql`
-query{
-  allBlogInfoJson(limit: 4) {
-    edges {
-      node {
-        description
-        slug
-        title
-        postedAt
-        image {
-          childImageSharp {
-            fluid(quality: 60) {
-              ...GatsbyImageSharpFluid
+  query{
+        allMarkdownRemark(limit: 4) {
+          edges {
+            node {
+              frontmatter {
+                slug
+                title
+                postedAt
+                snippet
+                featuredImage {
+                    childImageSharp {
+                      fluid(maxWidth: 800) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                }
+              }
             }
           }
         }
-      }
-    }
+      
   }
-}
 `;
-
 export default Home

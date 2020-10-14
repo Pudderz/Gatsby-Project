@@ -9,7 +9,7 @@ import GoToTopBot from '../Components/goToTopBot';
 import Metadata from '../Components/metadata';
 
 const BlogPost = ({data, pageContext})=>{
-    const articles = data.allBlogInfoJson.edges;
+    const articles = data.allMarkdownRemark.edges
     return(
         <div>
           <Metadata/>
@@ -39,23 +39,25 @@ BlogPost.propTypes ={
 
 export const query = graphql`
   query($limit: Int!, $skip: Int!){
-    allBlogInfoJson(limit: $limit, skip: $skip) {
-      edges {
-        node {
-          description
-          slug
-          title
-          postedAt
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+        allMarkdownRemark(limit: $limit, skip: $skip) {
+          edges {
+            node {
+              frontmatter {
+                slug
+                title
+                snippet
+                featuredImage {
+                    childImageSharp {
+                      fluid(maxWidth: 800) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                }
               }
             }
           }
         }
-      }
-    }
+      
   }
 `;
 

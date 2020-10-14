@@ -7,12 +7,12 @@ import Footer from "../Components/footer";
 import Metadata from "../Components/metadata";
 
 export const postQuery = graphql`
-    query BlogPostByPath($path: String!){
-        markdownRemark(frontmatter: {path: { eq: $path}}){
+    query BlogPostByPath($slug: String!){
+        markdownRemark(frontmatter: {slug: { eq: $slug}}){
             html
             frontmatter{
-                path
                 title
+                postedAt
                 featuredImage {
                     childImageSharp {
                       fluid(maxWidth: 800) {

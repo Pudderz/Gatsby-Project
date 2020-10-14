@@ -4,20 +4,20 @@ import {Link} from 'gatsby'
 
 function Blog({data}) {
     return (
-        <li key={data.node.slug} className="blogPost">
+        <li key={data.node.frontmatter.slug} className="blogPost">
             <div >
-                <Link to={`/blogs/${data.node.slug}`}>
+                <Link to={`/blogs/${data.node.frontmatter.slug}`}>
                 <Image
-                fluid={data.node.image.childImageSharp.fluid}
-                alt={data.node.title}
+                fluid={data.node.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={data.node.frontmatter.title}
                 className="image"
                 /></Link>
             </div>
             <div className="information">
-                <h2>{data.node.title}</h2>
+                <h2>{data.node.frontmatter.title}</h2>
                 <time>Posted At: {data.node.postedAt}</time>
-                <div dangerouslySetInnerHTML={{__html:data.node.description}}></div>
-                <Link to={`/blogs/${data.node.slug}`} className="purple">Read More</Link>   
+                <div dangerouslySetInnerHTML={{__html:data.node.frontmatter.snippet}}></div>
+                <Link to={`/blogs/${data.node.frontmatter.slug}`} className="purple">Read More</Link>   
             </div>
             
         </li>

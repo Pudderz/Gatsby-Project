@@ -11,18 +11,18 @@ export const PopularPosts =(props)=> {
             <h3>Recent Posts</h3>
             <hr/>
             <ul id="popular">
-                {props.data.allBlogInfoJson.edges.map((item, index)=>(
+                {props.data.allMarkdownRemark.edges.map((item, index)=>(
                     <li key={`${index}`} onClick={onChange} onKeyDown={onChange} data-key={`${index}`}>
                         <Image
-                        fluid={item.node.image.childImageSharp.fluid}
-                        alt={item.node.title}
+                        fluid={item.node.frontmatter.featuredImage.childImageSharp.fluid}
+                        alt={item.node.frontmatter.title}
                         className="image recentPostImage"
                         style={{'objectFit':'cover', width: '100%', height:'100%',}}
                         data-key={`${index}`}
                         />
                         <div className="middle">
                             <div className="text">
-                                <p>{item.node.postedAt}</p>
+                                <p>{item.node.frontmatter.postedAt}</p>
                             </div>
                         </div>
                     </li>

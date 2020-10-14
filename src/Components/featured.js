@@ -5,21 +5,21 @@ import Image from "gatsby-image"
 const Featured =({ data })=>(
     <div className="container">
         <div className="featuredImage">
-            <Link to={`/blogs/${data.node.slug}`}>
+            <Link to={`/blogs/${data.node.frontmatter.slug}`}>
                 <Image
-                fluid={data.node.image.childImageSharp.fluid}
-                alt={data.node.title}
+                fluid={data.node.frontmatter.featuredImage.childImageSharp.fluid}
+                alt={data.node.frontmatter.title}
                 className="image"
                 />    
             </Link>
         </div>
         <div className="featuredText">
             
-            <h2>{data.node.title}</h2>
+            <h2>{data.node.frontmatter.title}</h2>
 
-            <time>Posted At: {data.node.postedAt}</time>
-            <div dangerouslySetInnerHTML={{__html : data.node.description}}/>
-            <Link to={`/blogs/${data.node.slug}`}className="purple">Read More</Link>    
+            <time>Posted At: {data.node.frontmatter.postedAt}</time>
+            <div dangerouslySetInnerHTML={{__html : data.node.frontmatter.snippet}}/>
+            <Link to={`/blogs/${data.node.frontmatter.slug}`}className="purple">Read More</Link>    
         </div>
     </div>
 )
