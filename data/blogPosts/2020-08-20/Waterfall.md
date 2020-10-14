@@ -1,8 +1,9 @@
 ---
-slug: 'View'
-title: 'overview'
-featuredImage: '../images/overview.jpg'
-postedAt: 12/08/2020
+slug: 'waterfall'
+title: 'Waterfall'
+featuredImage: './waterfall.jpg'
+postedAt: 20/08/2020
+Date: '2020-08-20'
 snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
 ---
 

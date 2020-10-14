@@ -1,10 +1,12 @@
 ---
-slug: 'laptopandbook'
-title: 'Laptop And Book'
-featuredImage: "../images/laptopAndBook.jpg"
-postedAt: "24/09/20"
+slug: 'dog'
+title: 'Dog'
+featuredImage: './Doggo.jpg'
+postedAt: 04/09/2020
+Date: '2020-09-04'
 snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
 ---
+
 
 [test](#test)
 # Hello blog posts

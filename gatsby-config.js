@@ -4,7 +4,7 @@ module.exports = {
   plugins: [{
     resolve: "gatsby-source-filesystem",
     options:{
-      path: "./data/",
+      path: "./data/blogPosts",
     },
   },
   {resolve: `gatsby-plugin-manifest`,

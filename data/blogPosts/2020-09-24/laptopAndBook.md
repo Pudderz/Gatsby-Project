@@ -1,11 +1,11 @@
 ---
-slug: 'blogTitle'
-title: 'Featured Blog Title'
-featuredImage: "../images/kingfisher.jpg"
-postedAt: 14/10/2020
-snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed.'
+slug: 'laptopandbook'
+title: 'Laptop And Book'
+featuredImage: "./laptopAndBook.jpg"
+postedAt: "24/09/20"
+Date: '2020-09-24'
+snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
 ---
-
 
 [test](#test)
 # Hello blog posts
@@ -39,12 +39,3 @@ Cras et bibendum neque, a maximus dolor. In in tincidunt massa, id molestie urna
 ### h3
 
 #### test
-
-
-This is a regular paragraph.
-
-
-
-![bookshelf](../images/bookshelf.jpg)
-
-This is another regular paragraph.

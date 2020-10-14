@@ -1,8 +1,9 @@
 ---
-slug: 'forest'
-title: 'forest'
-featuredImage: "../images/trees.jpg"
-postedAt: "20/09/20"
+slug: 'bookshelf'
+title: 'Bookshelf'
+featuredImage: './bookshelf.jpg'
+postedAt: 15/09/2020
+Date: '2020-09-15'
 snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
 ---
 

@@ -1,9 +1,10 @@
 ---
-slug: 'pinkMountain'
-title: 'Mountain in pink'
-featuredImage: '../images/pinkMountain.jpg'
-postedAt: 14/08/2020
-snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
+slug: 'blogTitle'
+title: 'Featured Blog Title'
+featuredImage: "./kingfisher.jpg"
+postedAt: 25/09/2020
+Date: '2020-09-25'
+snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed.'
 ---
 
 
@@ -39,3 +40,5 @@ Cras et bibendum neque, a maximus dolor. In in tincidunt massa, id molestie urna
 ### h3
 
 #### test
+
+

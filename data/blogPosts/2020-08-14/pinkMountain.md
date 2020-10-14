@@ -1,8 +1,9 @@
 ---
-slug: 'skull'
-title: 'Skull'
-featuredImage: '../images/Skull.jpg'
-postedAt: 27/08/2020
+slug: 'pinkMountain'
+title: 'Mountain in pink'
+featuredImage: './pinkMountain.jpg'
+postedAt: 14/08/2020
+Date: '2020-08-14'
 snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
 ---
 

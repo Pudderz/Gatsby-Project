@@ -66,7 +66,10 @@ Home.propTypes ={
 // // `;
 export const query = graphql`
   query{
-        allMarkdownRemark(limit: 4) {
+        allMarkdownRemark(limit: 4, sort: {
+          fields: [frontmatter___Date]
+          order: DESC
+        }) {
           edges {
             node {
               frontmatter {

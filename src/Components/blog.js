@@ -15,7 +15,7 @@ function Blog({data}) {
             </div>
             <div className="information">
                 <h2>{data.node.frontmatter.title}</h2>
-                <time>Posted At: {data.node.postedAt}</time>
+                <time>Posted At: {data.node.frontmatter.postedAt}</time>
                 <div dangerouslySetInnerHTML={{__html:data.node.frontmatter.snippet}}></div>
                 <Link to={`/blogs/${data.node.frontmatter.slug}`} className="purple">Read More</Link>   
             </div>

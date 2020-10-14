@@ -39,13 +39,17 @@ BlogPost.propTypes ={
 
 export const query = graphql`
   query($limit: Int!, $skip: Int!){
-        allMarkdownRemark(limit: $limit, skip: $skip) {
+        allMarkdownRemark(limit: $limit, skip: $skip, sort: {
+          fields: [frontmatter___Date]
+          order: DESC
+        }) {
           edges {
             node {
               frontmatter {
                 slug
                 title
                 snippet
+                postedAt
                 featuredImage {
                     childImageSharp {
                       fluid(maxWidth: 800) {

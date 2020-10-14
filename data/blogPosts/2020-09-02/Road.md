@@ -1,8 +1,9 @@
 ---
-slug: 'first-post'
-title: 'First Blog Post'
-featuredImage: '../images/bookshelf.jpg'
-postedAt: 14/10/2020
+slug: 'road'
+title: 'Road'
+featuredImage: './road.jpg'
+postedAt: 02/09/2020
+Date: '2020-09-02'
 snippet: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae ipsum in turpis luctus sodales. Morbi nibh sapien, vehicula et vulputate eu, consequat vel ipsum. Aliquam ornare laoreet dui, ac placerat urna finibus sed. Mauris aliquet pulvinar commodo.'
 ---
 
