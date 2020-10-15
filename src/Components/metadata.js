@@ -7,6 +7,6 @@ export default function Metadata() {
                 <meta charSet="utf-8" />
                 <title>Gatsby Blog</title>
                 <link rel="canonical" href="localhost:9000" />
-            </Helmet>
+        </Helmet>
     )
 }
