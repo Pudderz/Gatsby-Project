@@ -7,7 +7,7 @@ import Metadata from '../Components/metadata'
 class about extends Component {
     render() {
         return (
-            <div>
+            <div style={{'textAlign': 'center'}}>
                 <Navigation/>
                 <Metadata/>
                 <div id="aboutSite">
@@ -19,7 +19,7 @@ class about extends Component {
                             <p>gatsby-source-filesystem</p>
                         </li>
                         <li>
-                            gatsby-transformer-json
+                            gatsby-plugin-manifest
                         </li>
                         <li>
                             <p>gatsby-transformer-sharp</p>
@@ -30,10 +30,44 @@ class about extends Component {
                         <li>
                            <p>gatsby-awesome-pagination</p> 
                         </li>
-
+                        <li>
+                            <p>gatsby-plugin-offline</p>
+                        </li>
+                        <li>
+                            <p>gatsby-plugin-react-helmet</p>
+                        </li>
+                        <li>
+                            <p>gatsby-transformer-sharp</p>
+                        </li>
+                        <li>
+                            <p>gatsby-plugin-sharp</p>
+                        </li>
+                        <li>
+                            <p>gatsby-plugin-sass</p>
+                        </li>
+                        <li>
+                            <p>gatsby-plugin-mdx</p>
+                        </li>
+                        <li>
+                            <p>gatsby-remark-images</p>
+                        </li>
+                        <li>
+                            <p>gatsby-plugin-mdx</p>
+                        </li>
+                        <li>
+                            <p>gatsby-remark-autolink-headers</p>
+                        </li>
+                        <li>
+                            <p>gatsby-remark-slug</p>
+                        </li>
+                        <li>
+                            <p>gatsby-plugin-page-creator</p>
+                        </li>
                     </ol>
                 </div>
                 
+  
+  
 
                 <div id="formDiv">
                     <form className="contactForm">

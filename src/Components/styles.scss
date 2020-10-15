@@ -85,8 +85,7 @@ nav{
         display: flex;
         width: 100%;
         justify-content: space-between;
-        margin: auto;
-
+        margin: 0px 20px;
     }
 }
 
@@ -217,18 +216,14 @@ nav{
 }
 
 
-.popularPosts{
-    margin-top: 6vh;
-}
+
 
 @media(max-width:1250px){
     .featuredImage .image, .featuredImage{
         float: none;
         margin: auto;
         width: fit-content;
-    }
-    .popularPosts{
-        margin-top: 0;
+
     }
 }
 
@@ -418,7 +413,7 @@ img{
     padding: 0.5vw;
     h1{
         margin-bottom: 0;
-        font-size: 2em;
+        font-size: 3rem;
     }
     picture > img{
         max-height: 60vh;
@@ -493,8 +488,6 @@ img{
 
 
 .contactForm{
-    margin: auto;
-    width:80%;
     display: grid;
     background-color: $purple-color;
     padding: 20px;
@@ -523,6 +516,10 @@ img{
         padding-top: 0;
         padding-bottom: 0;
     }
+    .purple{
+        width: 200px;
+        margin: 10px auto 0 auto;
+    }
 }
 
 
@@ -533,14 +530,18 @@ label input{
     height: 200px
 }
 #formDiv{
-    max-width: 800px;
-    margin: auto;
+    
+    margin: 50px
 }
 
 #aboutSite{
     background-color: hsl(256, 26%, 20%);
     padding: 20px;
-    margin-bottom: 20px;
+    margin: 50px;
+    ol{
+       list-style: none; 
+    }
+    
 }
 
 .scrollTo{
@@ -566,4 +567,69 @@ label input{
 
 .allPosts{
     max-width:1200px;
+}
+
+
+.popularPosts{
+    margin-top: 6vh;
+}
+
+
+
+// Home Page Styles For large Displays
+@media(min-width: 2500px){
+    main{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-rows: 65% 35%;
+        height: 98vh;
+        width: 100%;
+        overflow: hidden;
+    }
+    .featuredImage{
+        height:inherit;
+        .image{
+            max-height: inherit;
+            max-height: 60vh;
+            width: 50vw;
+        } 
+    } 
+    hr{
+        margin: 0.3vw 0px;
+    }
+    .featuredImage .image picture > img{
+        height: auto !important;
+        max-width: inherit;
+        object-fit: cover !important;
+    }
+    .featuredText{
+        font-size: 1vw;
+        max-width: 40vw;
+        h2{
+            font-size: 4vw;
+        }
+        .purple{
+            margin: 1vw 0px;
+            
+        }
+    }
+    .popularPosts{
+        margin: 0;
+    }
+    .center, .popularPosts .text{
+        font-size: 1vw;
+    }
+    .popularPosts h3{
+        font-size: 1vw;
+    }
+    .container{
+        max-height: 50vh;
+    }
+    nav{ 
+        height: 2vh;
+        padding: 0.5em;
+        .buttons{
+        font-size: 0.8vw;
+        }
+    }
 }
