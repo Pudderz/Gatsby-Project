@@ -9,7 +9,7 @@ import GoToTopBot from '../Components/goToTopBot';
 import Metadata from '../Components/metadata';
 
 const BlogPost = ({data, pageContext})=>{
-    const articles = data.allMarkdownRemark.edges
+    const articles = data.allMdx.edges
     return(
         <div>
           <Metadata/>
@@ -39,7 +39,7 @@ BlogPost.propTypes ={
 
 export const query = graphql`
   query($limit: Int!, $skip: Int!){
-        allMarkdownRemark(limit: $limit, skip: $skip, sort: {
+        allMdx(limit: $limit, skip: $skip, sort: {
           fields: [frontmatter___Date]
           order: DESC
         }) {

@@ -30,7 +30,7 @@ function Home ({data}){
       <Navigation/>
     <main>
       <div className="featured">
-        <Featured data={data.allMarkdownRemark.edges[state.featuredIndex]}></Featured>
+        <Featured data={data.allMdx.edges[state.featuredIndex]}></Featured>
       </div>
       <RecentPosts data={data} onPostClick={onPostClick}/>
 
@@ -66,7 +66,7 @@ Home.propTypes ={
 // // `;
 export const query = graphql`
   query{
-        allMarkdownRemark(limit: 4, sort: {
+        allMdx(limit: 4, sort: {
           fields: [frontmatter___Date]
           order: DESC
         }) {

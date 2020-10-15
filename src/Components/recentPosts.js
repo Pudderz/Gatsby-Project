@@ -11,7 +11,7 @@ export const PopularPosts =(props)=> {
             <h3>Recent Posts</h3>
             <hr/>
             <ul id="popular">
-                {props.data.allMarkdownRemark.edges.map((item, index)=>(
+                {props.data.allMdx.edges.map((item, index)=>(
                     <li key={`${index}`} onClick={onChange} onKeyDown={onChange} data-key={`${index}`}>
                         <Image
                         fluid={item.node.frontmatter.featuredImage.childImageSharp.fluid}

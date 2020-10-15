@@ -4,7 +4,7 @@ const path = require('path')
 exports.createPages = async({actions, graphql})=>{
   const {createPage} = actions
 const results = await graphql(`{
-    allMarkdownRemark(sort: {
+    allMdx(sort: {
       fields: [frontmatter___Date]
       order: DESC
     }){
@@ -26,14 +26,14 @@ if(results.error){
   //itemsPerPage edit to change number of items per post page
   paginate({
     createPage,
-    items: results.data.allMarkdownRemark.edges,
+    items: results.data.allMdx.edges,
     itemsPerPage: 4,
     pathPrefix: '/posts',
     component: path.resolve('./src/templates/listOfPages.js'),
   })
 
   //creates pages for each blog post
-  results.data.allMarkdownRemark.edges.forEach(edge=>{
+  results.data.allMdx.edges.forEach(edge=>{
       const product = edge.node;
       createPage({
           path: `/blogs/${product.frontmatter.slug}`,

@@ -1,15 +1,18 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Navigation from "../Components/navigation";
 import Footer from "../Components/footer";
 import Metadata from "../Components/metadata";
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import TableOfContents from '../Components/TableOfContent'
+
 
 export const postQuery = graphql`
     query BlogPostByPath($slug: String!){
-        markdownRemark(frontmatter: {slug: { eq: $slug}}){
-            html
+        mdx(frontmatter: {slug: { eq: $slug}}){
+            body
+            tableOfContents
             frontmatter{
                 title
                 postedAt
@@ -21,37 +24,42 @@ export const postQuery = graphql`
                     }
                   }
             }
+            
         }
     }
 `
 
-const markdownTemp = ({ data }) => {
-const {markdownRemark: post} = data;
-  const product = post.frontmatter
+const markdownTemp = (props) => {
+  const post = props.data.mdx
+
 
   return (
-    <>
-    <Navigation/>
-    <Metadata/>
-    <section>
-      
-      <div className="blogPiece">
-      <Image
-        fluid={product.featuredImage.childImageSharp.fluid}
-        alt={product.title}
-        style={{ position: 'relative', margin:'auto', 'maxHeight': '60vh'}}
-        className="image"
-      />
-      <h1>{product.title}</h1>
-      <p>{product.postedAt}</p>
-      <div className="blogContent">
-        <div  dangerouslySetInnerHTML={{ __html: post.html }} />  
-      </div>
-      
-      </div>
-    </section>
-    <Footer/>
-    </>
+    <React.Fragment>
+      <Navigation/>
+      <Metadata/>
+      <section>
+        {
+        post?.tableOfContents?.items && (
+          <TableOfContents items={post.tableOfContents.items} />
+        )
+        }
+        <div className="blogPiece">
+        <Image
+          fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+          alt={post.frontmatter.title}
+          style={{ position: 'relative', margin:'auto', 'maxHeight': '60vh'}}
+          className="image"
+        />
+        <h1>{post.frontmatter.title}</h1>
+        <p>{post.frontmatter.postedAt}</p>
+        <div className="blogContent">
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
+        
+        </div>
+      </section>
+      <Footer/>
+    </React.Fragment>
   )
 }
 

@@ -26,9 +26,10 @@ module.exports = {
   "gatsby-plugin-sass",
   
   {
-    resolve: 'gatsby-transformer-remark',
+    resolve: 'gatsby-plugin-mdx',
     options: {
-      plugins: [
+      extensions: ['.md', '.mdx'],
+      gatsbyRemarkPlugins: [
         {
           resolve: `gatsby-remark-images`,
             options: {
@@ -38,9 +39,18 @@ module.exports = {
           
         }, 
         `gatsby-remark-autolink-headers`,
+        `gatsby-remark-slug`,
+        {
+          resolve: "gatsby-plugin-page-creator",
+          options: {
+            path: `${__dirname}/src/posts`,
+          },
+        }
       ]
 
     }
   }
+    
+
 ],
 }

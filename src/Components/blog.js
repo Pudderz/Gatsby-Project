@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'gatsby-image'
 import {Link} from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 function Blog({data}) {
     return (
