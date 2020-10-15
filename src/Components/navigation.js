@@ -1,22 +1,42 @@
 import { Link } from 'gatsby'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 export default function Navigation() {
+
     const [navState, setNavDisplay]= useState({top:'0px'});
-    const [menuState, setShowMenu] = useState({display: 'none'})
+    const [menuState, setShowMenu] = useState({
+        showing: '',
+        hamburger: '',
+    })
+    const menuShowingRef = useRef(false);
+
+    const displayMenu = ()=>{
+        menuShowingRef.current = (menuState.showing ==='none')? true: false;
+
+        setShowMenu({
+            showing:  (menuState.showing ==='')? 'showing' : '',
+            hamburger: (menuState.showing ==='')? 'change' : '',
+        })
+        setNavDisplay({
+            top: '0px'
+        })
+        
+    }
 
 
     const onScroll=(previousYPos)=>{
-
         const currentYPos = window.pageYOffset;
-        if(previousYPos> currentYPos){
-            setNavDisplay({
-                top: '0px',
-            });
+        if(!menuShowingRef.current){
+            if(previousYPos > currentYPos){
+                setNavDisplay({
+                    top: '0px',
+                });
             }else{
-            setNavDisplay({
-                top: '-50px',
-            });
+                setNavDisplay({
+                    top: '-50px',
+                });
+            }
+        
         }
         return currentYPos;
     }
@@ -34,39 +54,34 @@ export default function Navigation() {
         }
     },[])
 
-    const displayMenu = ()=>{
-        setShowMenu({
-            display: (menuState.display ==='none')? 'grid' : 'none',
-            width:  (menuState.display ==='none')? '100%' : '0%',
-        })
-    }
-
+    
         return (
             <>
-        <nav style={{top: navState.top}}>
+        <nav style={{top: navState.top, zIndex: '4'}}>
             
             <div className="buttons">
                 <Link to="/">Home</Link>
                 <Link to='/posts'>Posts</Link> 
                 <Link to="/about">About</Link>
-                <Link to='/'>Portfolio</Link>
-                <Link to='/'>Github</Link>  
+                <Link to='http://www.matthewPudney.co.uk'>Portfolio</Link>
+                <Link to='https://github.com/Pudderz'>Github</Link>  
             </div>
             <Link to='/' className="menu" style={{"color":"rgb(19,17,39)",'margin': '0',
     'fontSize': 'large'}}>Blog</Link>
-            <button className="menu" onClick={displayMenu} onKeyDown={displayMenu} title="menu">
-                <div></div>
-                <div></div>
-                <div></div>
+            
+            <button className={`menu ${menuState.hamburger}`} onClick={displayMenu} onKeyDown={displayMenu} title="menu">
+                <div className="bar1"></div>
+                <div className="bar2"></div>
+                <div className="bar3"></div>
             </button>
+            
         </nav>
-        <div id="overlay" style={{display: menuState.display, width:menuState.width}}>
-            <button id="closeMenu" onClick={displayMenu} onKeyDown={displayMenu} >&times;</button>
-                <Link to="/">Home</Link>
-                <Link to='/posts'>Posts</Link> 
-                <Link to="/about">About</Link>
-                <Link to='/'>Portfolio</Link>
-                <Link to='/'>Github</Link>   
+        <div id="overlay" className={`${menuState.showing}`}>
+            <Link to="/">Home</Link>
+            <Link to='/posts'>Posts</Link> 
+            <Link to="/about">About</Link>
+            <Link to='http://www.matthewPudney.co.uk'>Portfolio</Link>
+            <Link to='https://github.com/Pudderz'>Github</Link>   
         </div>
         </>
     )
