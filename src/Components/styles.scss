@@ -72,21 +72,17 @@ nav{
     padding: 1em;
     transition: 0.3s;
     
-    button{
-        display: none;
-        color:hsl(273, 4%, 51%);
-        background: none;
-        outline: none;
-        border-style: none;
-        cursor: pointer;
-    }
+    
 
     .buttons{
         display: flex;
         width: 100%;
         justify-content: space-between;
         margin: 0px 20px;
-        color: lightslategray;
+        a{
+            color: #67E;
+        }
+        
     }
 }
 

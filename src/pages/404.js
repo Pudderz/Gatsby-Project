@@ -1,6 +1,6 @@
 import React from 'react'
 import Navigation from '../Components/navigation'
-
+import Metadata from '../Components/metadata'
 export default function page(){
     const divStyles ={
         position: 'absolute',
@@ -15,6 +15,7 @@ export default function page(){
     }
     return (
         <>
+        <Metadata/>
         <Navigation/>
         <div style={divStyles}>
             <h2 style={{color: 'white', margin: '0'}}> Resource not found</h2>

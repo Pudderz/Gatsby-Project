@@ -6,7 +6,9 @@ export default function Metadata() {
         <Helmet>
                 <meta charSet="utf-8" />
                 <title>Gatsby Blog</title>
-                <link rel="canonical" href="localhost:9000" />
+                <link rel="canonical" href="https://localhost:9000/" />
+                <meta name="description" content="Gatsby blog template site" />
+                <html lang="en" />
         </Helmet>
     )
 }

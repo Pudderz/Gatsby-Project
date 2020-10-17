@@ -1,7 +1,10 @@
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: "/Gatsby-Project",
+  //pathPrefix: "/Gatsby-Project",
+  siteMetadata: {
+    siteUrl: `https://localhost:9000/`
+  },
   plugins: [{
     resolve: "gatsby-source-filesystem",
     options:{
@@ -16,15 +19,21 @@ module.exports = {
         background_color: "#131127",
         theme_color: "#2d2640",
         display: "standalone",
-        icon: "static/favicon.ico",
+        icon: "static/favicon.ico"
       }
   },
+    
   'gatsby-plugin-offline',
   `gatsby-plugin-react-helmet`,
   "gatsby-transformer-sharp",
   "gatsby-plugin-sharp",
   "gatsby-plugin-sass",
-  
+  {
+    resolve: 'gatsby-plugin-html-attributes',
+    options: {
+      lang: 'en'
+    }
+  },
   {
     resolve: 'gatsby-plugin-mdx',
     options: {
@@ -47,8 +56,10 @@ module.exports = {
           },
         }
       ]
+      
 
     }
+    
   }
     
 
