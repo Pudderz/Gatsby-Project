@@ -19,7 +19,10 @@ module.exports = {
         background_color: "#131127",
         theme_color: "#2d2640",
         display: "standalone",
-        icon: "static/favicon.ico"
+        icon: "static/favicon.ico",
+        icon_options: {
+          purpose: `maskable`,
+        },
       }
   },
     
